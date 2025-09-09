@@ -1,0 +1,44 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    @*start header*@
+    <header>
+        <center>
+            <nav class="mt-5">
+@*               <a href="/Home/Index" class="btn btn-primary m-2">Home</a>
+                <a href="/Home/Privacy" class="btn btn-warning m-2">Privacy</a> 
+                <a href="/Home/About" class="btn btn-success m-2">About Us</a> 
+                <a href="/Home/Contact" class="btn btn-secondary m-2">Contact Us</a> *@
+
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary m-2">Home</a>
+                <a asp-controller="Home" asp-action="Privacy" class="btn btn-warning m-2">Privacy</a>
+                <a asp-controller="Home" asp-action="About" class="btn btn-success m-2">About</a>
+                <a asp-controller="Home" asp-action="Contact" class="btn btn-secondary m-2">Contact</a>
+
+                <a href="/Account/SignIn" class="btn btn-info m-2">SignIn</a>
+                <a href="/Account/Register" class="btn btn-danger m-2">Register</a>
+            </nav>
+        </center>
+    </header>
+    @*end header*@
+    <div>
+        @RenderBody()
+    </div>
+    @*start footer*@
+    <footer>
+        <center>
+            <div class="mt-2">
+                <p>CopyRights &copy; Route @DateTime.Now.Year</p>
+            </div>
+        </center>
+    </footer>
+    @*end footer*@
+</body>
+</html>
